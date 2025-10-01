@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Alerta — Posible Riesgo: Trata y Tráfico</title>
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --accent: #ff4d4f;
+            --muted: #cbd5e1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --success: #16a34a;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+        }
+
+        body {
+            background: linear-gradient(180deg, #071027 0%, #081428 40%, #021022 100%);
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 720px;
+            background: var(--card);
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+            backdrop-filter: blur(6px);
+        }
+
+        header {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .icon {
+            width: 68px;
+            height: 68px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #ff8a80, #ff4d4f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 20px;
+            color: #fff
+        }
+
+        p.lead {
+            margin: 10px 0 18px;
+            color: #e6eef7;
+            line-height: 1.35
+        }
+
+        .alert {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 12px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, rgba(255, 77, 79, 0.06), rgba(255, 77, 79, 0.02));
+            border: 1px solid rgba(255, 77, 79, 0.12);
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .alert strong {
+            color: #fff
+        }
+
+        ul {
+            margin: 8px 0 16px;
+            padding-left: 18px
+        }
+
+        li {
+            margin-bottom: 8px
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px
+        }
+
+        button,
+        a.btn {
+            appearance: none;
+            border: 0;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(255, 77, 79, 0.15)
+        }
+
+        .ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--muted)
+        }
+
+        .safe {
+            background: var(--success);
+            color: white
+        }
+
+        small {
+            display: block;
+            color: #9fb0c9;
+            margin-top: 8px
+        }
+
+        .resources {
+            margin-top: 14px;
+            padding: 12px;
+            border-radius: 10px;
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        .resources a {
+            color: #e6f7ff;
+            text-decoration: underline
+        }
+
+        footer {
+            margin-top: 18px;
+            color: #9fb0c9;
+            font-size: 13px
+        }
+
+        @media (max-width:420px) {
+            .icon {
+                width: 56px;
+                height: 56px;
+                font-size: 24px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card" role="main" aria-labelledby="title">
+        <header>
+            <div class="icon" aria-hidden="true">!</div>
+            <div>
+                <h1 id="title">¡Alerta importante — posible peligro!</h1>
+                <p class="lead">Este póster podría ser engañoso. Si te llamó la atención y estás a punto de contactar,
+                    encontraste un código QR o te invitan a moverte a un lugar o a compartir datos personales, por favor
+                    lee esto primero.</p>
+            </div>
+        </header>
+
+        <div class="alert" role="alert" aria-live="polite">
+            <div style="flex:1">
+                <strong>Riesgo identificado:</strong>
+                <div>Campañas o anuncios que parecen “muy atractivos” (trabajo fácil, premios, viajes, modelaje) a
+                    menudo se usan para captar y explotar a personas — puede haber riesgo de trata o tráfico.</div>
+            </div>
+        </div>
+
+        <section aria-labelledby="what">
+            <h2 id="what" style="color:#fff;margin:0 0 8px;font-size:16px">Qué hacer ahora</h2>
+            <ul>
+                <li><strong>No compartas</strong> tu ubicación ni datos personales (DNI, fotos íntimas, cuentas
+                    bancarias, direcciones).</li>
+                <li><strong>No vayas</strong> solo a lugares desconocidos ni aceptes transporte de desconocidos.</li>
+                <li><strong>No envíes dinero</strong> ni hagas reservas a cuentas de terceros por mensajes.</li>
+            </ul>
+
+            <div class="actions" role="group" aria-label="Acciones rápidas">
+                <a class="btn primary" id="callEmergency" href="tel:__EMERGENCY_NUMBER__">📞 Llamar emergencia</a>
+                <a class="btn ghost" id="reportMail"
+                    href="mailto:__REPORT_EMAIL__?subject=Denuncia%20posible%20trata">✉️ Enviar denuncia</a>
+                <button class="btn safe" id="shareBtn" type="button">🔗 Compartir aviso</button>
+                <button class="btn ghost" id="downloadBtn" type="button">⬇️ Descargar guía (PDF)</button>
+            </div>
+            <small>Si estás en peligro inminente, llama primero al número de emergencia local.</small>
+        </section>
+
+        <section class="resources" aria-labelledby="resourcesTitle">
+            <h3 id="resourcesTitle" style="margin:0 0 8px;color:#fff;font-size:15px">Recursos y ayuda</h3>
+            <p>Organizaciones internacionales y recursos confiables:</p>
+            <ul>
+                <li><a href="https://www.unodc.org" target="_blank" rel="noopener">Oficina de las Naciones Unidas contra
+                        la Droga y el Delito (UNODC)</a></li>
+                <li><a href="https://www.iom.int" target="_blank" rel="noopener">Organización Internacional para las
+                        Migraciones (IOM)</a></li>
+            </ul>
+            <p>Contacto local: reemplaza los campos en la página con el <strong>número de emergencia</strong> y el
+                <strong>correo de denuncia</strong> de tu institución o país.</p>
+        </section>
+
+        <footer>
+            <div>¿Por qué recibiste esta alerta? Porque el contenido del afiche está diseñado para llamar la atención y
+                puede ser un señuelo. Esta página es informativa y busca protegerte.</div>
+        </footer>
+    </main>
+
+    <script>
+        // --- Small client-side helpers (editable) ---
+        (function () {
+            // Replace placeholders visually if not set by hoster
+            const tel = "__EMERGENCY_NUMBER__";
+            const mail = "__REPORT_EMAIL__";
+            const callBtn = document.getElementById('callEmergency');
+            const mailBtn = document.getElementById('reportMail');
+
+            if (callBtn && callBtn.getAttribute('href').includes('__EMERGENCY_NUMBER__')) {
+                // replace with a neutral placeholder that does not accidentally call a wrong service
+                callBtn.setAttribute('href', 'tel:112'); // DEFAULT: 112 (emergency) — replace before deploy if another is used
+            }
+            if (mailBtn && mailBtn.getAttribute('href').includes('__REPORT_EMAIL__')) {
+                mailBtn.setAttribute('href', 'mailto:denuncia@ejemplo.org?subject=Denuncia%20posible%20trata');
+            }
+
+            // Share API
+            const shareBtn = document.getElementById('shareBtn');
+            shareBtn.addEventListener('click', async function () {
+                const data = {
+                    title: 'Alerta sobre posible trata / estafa',
+                    text: 'Revisa este aviso antes de responder a mensajes o ir a lugares desconocidos.',
+                    url: window.location.href
+                };
+                if (navigator.share) {
+                    try { await navigator.share(data); } catch (e) { alert('Compartir cancelado. Copia el enlace manualmente.'); }
+                } else {
+                    // fallback: copy to clipboard
+                    try {
+                        await navigator.clipboard.writeText(window.location.href);
+                        alert('Enlace copiado al portapapeles. Pégalo para compartir.');
+                    } catch (e) {
+                        prompt('Copia este enlace y compártelo:', window.location.href);
+                    }
+                }
+            });
+
+            // Download a simple PDF-like informational file (generated client-side)
+            document.getElementById('downloadBtn').addEventListener('click', function () {
+                const text = [
+                    'ALERTA — Posible TRATA Y TRÁFICO',
+                    '',
+                    'Si este póster te llamó la atención, recuerda:',
+                    '- No compartas datos personales ni ubicación.',
+                    '- No aceptes transporte ni vayas solo a lugares desconocidos.',
+                    '- No envíes dinero ni fotos íntimas.',
+                    '',
+                    'Contacta a las autoridades locales o a tu institución. Si estás en peligro inminente, llama al número de emergencia.',
+                    '',
+                    'Más información: https://www.unodc.org  |  https://www.iom.int'
+                ].join('\\n');
+                const blob = new Blob([text], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url; a.download = 'guia_alerta_trata.txt';
+                document.body.appendChild(a); a.click();
+                a.remove(); URL.revokeObjectURL(url);
+            });
+
+        })();
+    </script>
+</body>
+
+</html>
